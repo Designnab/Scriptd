@@ -90,11 +90,11 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 									// Flatten the document in case the file type we want to save to requires a flat doc
 									app.activeDocument.flatten();
 								
-									//Save as a JPEG to the outputFolder
-									var jpegOptions = new JPEGSaveOptions();
-									jpegOptions.quality = 10;
-									jpegOptions.embedColorProfile = false;
-									app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".jpg"), jpegOptions, false);
+									//Save as a TIFF to the outputFolder
+									var tiffOptions = new JPEGSaveOptions();
+									tiffOptions.quality = 10;
+									tiffOptions.embedColorProfile = true;
+									app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".tiff"), tiffOptions, false);
 									
 									// Close without saving
 									 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
