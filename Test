@@ -92,14 +92,14 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 								
 									//Save as a TIFF to the outputFolder
 									function SaveTIFF(saveFile){  
-									var tiffSaveOptions = new TiffSaveOptions();   
-									tiffSaveOptions.embedColorProfile = true;   
-									tiffSaveOptions.alphaChannels = true;   
-									tiffSaveOptions.layers = true;  
-									tiffSaveOptions.imageCompression = TIFFEncoding.JPEG;  
-									tiffSaveOptions.jpegQuality=10;  
-									app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".tiff"), jpegOptions, false);
-}
+tiffSaveOptions = new TiffSaveOptions();   
+tiffSaveOptions.embedColorProfile = true;   
+tiffSaveOptions.alphaChannels = true;   
+tiffSaveOptions.layers = true;  
+tiffSaveOptions.imageCompression = TIFFEncoding.JPEG;  
+tiffSaveOptions.jpegQuality=10;  
+activeDocument.saveAs( File( outputFolder  + "/" + Extension.LOWERCASE), saveFile, tiffSaveOptions, true,;   
+} 
 									
 									// Close without saving
 									 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
