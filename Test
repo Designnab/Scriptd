@@ -71,6 +71,9 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 							// case is the parent document we want to extract
 							// multiple scanned images from
 							var docRef = app.activeDocument;
+							
+							// Recolor the document to CMYK
+							app.doAction("Authors","Natalie Action.ATN");
 
 							// Run the cropAndStraighten function
 							// which will rusult in more than one open document
