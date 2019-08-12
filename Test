@@ -98,7 +98,7 @@ tiffSaveOptions.alphaChannels = true;
 tiffSaveOptions.layers = true;  
 tiffSaveOptions.imageCompression = TIFFEncoding.JPEG;  
 tiffSaveOptions.jpegQuality=10;  
-app.activeDocument.saveAs( File( outputFolder  + "/" + Extension.LOWERCASE), saveFile, tiffSaveOptions, true,;   
+app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".jpg"), jpegOptions, false); 
 } 
 									
 									// Close without saving
