@@ -102,8 +102,7 @@ if(fileName == '') {
     return;  
     }  
 var saveFile = File( outputFolder + "/" + activeDocument.name + ".tif");  
-SaveTIFF(saveFile);  
-app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);  
+SaveTIFF(saveFile);   
 };  
 function SaveTIFF(saveFile){  
 tiffSaveOptions = new TiffSaveOptions();   
