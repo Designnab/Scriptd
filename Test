@@ -91,6 +91,18 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 									app.activeDocument.flatten();
 								
 									//Save as a TIFF to the outputFolder
+
+
+var saveFile = File(Path + "/" + fileName + ".tif");
+
+if(saveFile.exists) saveFile = File(Path + "/" + fileName +"-" + time() + ".tif");
+
+SaveTIFF(saveFile);
+
+app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);
+
+};
+
 function SaveTIFF(saveFile){
 
 tiffSaveOptions = new TiffSaveOptions();
