@@ -92,6 +92,7 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 								
 									//Save as a TIFF to the outputFolder
 									var tiffOptions = new TIFFSaveOptions();
+									tiffOptions.ImageCompression = JPEG;
 									tiffOptions.quality = 10;
 									tiffOptions.embedColorProfile = true;
 									app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".tiff"), tiffOptions, false);
