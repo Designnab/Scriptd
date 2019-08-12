@@ -101,7 +101,7 @@ if(fileName == '') {
     alert("There is no title in this document");  
     return;  
     }  
-var saveFile = File(Path + "/" + fileName + ".tif");  
+var saveFile = File( outputFolder + "/" + fileName + ".tif");  
 SaveTIFF(saveFile);  
 app.activeDocument.close(SaveOptions.DONOTSAVECHANGES);  
 };  
