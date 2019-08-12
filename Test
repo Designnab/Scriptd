@@ -91,8 +91,8 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 									app.activeDocument.flatten();
 								
 									//Save as a TIFF to the outputFolder
-									var SaveTIFF(saveFile){  
-									tiffSaveOptions = new TiffSaveOptions();   
+									function SaveTIFF(saveFile){  
+									var tiffSaveOptions = new TiffSaveOptions();   
 									tiffSaveOptions.embedColorProfile = true;   
 									tiffSaveOptions.alphaChannels = true;   
 									tiffSaveOptions.layers = true;  
