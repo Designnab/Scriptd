@@ -98,7 +98,7 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 									tiffSaveOptions.layers = true;  
 									tiffSaveOptions.imageCompression = TIFFEncoding.JPEG;  
 									tiffSaveOptions.jpegQuality=10;  
-									app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".tiff"), tiffSaveOptions, true,);
+									app.activeDocument.saveAs( File( outputFolder  + "/" + activeDocument.name + ".tiff"), jpegOptions, false);
 }
 									
 									// Close without saving
