@@ -108,7 +108,8 @@ tiffSaveOptions = new TiffSaveOptions();
 tiffSaveOptions.embedColorProfile = true;   
 tiffSaveOptions.alphaChannels = true;   
 tiffSaveOptions.layers = true;  
-tiffSaveOptions.imageCompression = TIFFEncoding.TIFFLZW;
+tiffSaveOptions.imageCompression = TIFFEncoding.JPEG;  
+tiffSaveOptions.jpegQuality=12;
 activeDocument.saveAs(saveFile, tiffSaveOptions, true, Extension.LOWERCASE);   
 };  
 									
