@@ -96,10 +96,6 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
   
 main();  
 function main(){  
-if(!Path.exists){  
-    alert(Path + " does not exist!");  
-    return;  
-    }  
 var fileName =activeDocument.info.title;  
 if(fileName == '') {  
     alert("There is no title in this document");  
