@@ -1,0 +1,109 @@
+on run {input, parameters} -- create folders from file names and move
+
+
+
+  set output to {} -- this will be a list of the moved files
+
+
+
+  repeat with anItem in the input -- step through each item in the input
+
+    set {theContainer, theName, theExtension} to (getTheNames from anItem)
+
+    try
+
+
+
+
+
+       # check for a suffix and strip it off for the folder name
+
+      if theName ends with " LOW" then
+
+        set destination to (makeNewFolder for (text 1 thru -5 of theName) at theContainer)
+
+      else
+
+        set destination to (makeNewFolder for theName at theContainer)
+
+      end if
+
+
+
+
+
+      tell application "Finder"
+
+        move anItem to destination
+
+        set the end of the output to the result as alias -- success
+
+      end tell
+
+    on error errorMessage -- duplicate name, permissions, etc
+
+      log errorMessage
+
+      # handle errors if desired - just skip for now
+
+    end try
+
+  end repeat
+
+
+
+  return the output -- pass on the results to following actions
+
+end run
+
+
+
+
+
+to getTheNames from someItem -- get a container, name, and extension from a file item
+
+  tell application "System Events" to tell disk item (someItem as text)
+
+    set theContainer to the path of the container
+
+    set {theName, theExtension} to {name, name extension}
+
+  end tell
+
+  if theExtension is not "" then
+
+    set theName to text 1 thru -((count theExtension) + 2) of theName -- just the name part
+
+    set theExtension to "." & theExtension
+
+  end if
+
+  return {theContainer, theName, theExtension}
+
+end getTheNames
+
+
+
+
+
+to makeNewFolder for theChild at theParent -- make a new child folder at the parent location if it doesn't already exist
+
+  set theParent to theParent as text
+
+  if theParent begins with "/" then set theParent to theParent as POSIX file as text
+
+  try
+
+    return (theParent & theChild) as alias
+
+  on error errorMessage -- no folder
+
+    log errorMessage
+
+    tell application "Finder" to make new folder at theParent with properties {name:theChild}
+
+    return the result as alias
+
+  end try
+
+end makeNewFolder
