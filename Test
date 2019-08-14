@@ -100,7 +100,7 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 main();  
 function main(){  
 var fileName =activeDocument.info.title;  
-var saveFile = File( outputFolder + "/" + activeDocument.name + ".tif");  
+var saveFile = File( outputFolder + "/" + activeDocument.name + ".tiff");  
 SaveTIFF(saveFile);   
 };  
 function SaveTIFF(saveFile){  
@@ -108,8 +108,7 @@ tiffSaveOptions = new TiffSaveOptions();
 tiffSaveOptions.embedColorProfile = true;   
 tiffSaveOptions.alphaChannels = true;   
 tiffSaveOptions.layers = true;  
-tiffSaveOptions.imageCompression = TIFFEncoding.JPEG;  
-tiffSaveOptions.jpegQuality=12;
+tiffSaveOptions.imageCompression = TIFFEncoding.TIFFLZW;
 activeDocument.saveAs(saveFile, tiffSaveOptions, true, Extension.LOWERCASE);   
 };  
 									
