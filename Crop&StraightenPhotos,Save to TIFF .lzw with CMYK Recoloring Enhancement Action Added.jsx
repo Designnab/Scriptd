@@ -100,7 +100,7 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 main();  
 function main(){  
 var fileName =activeDocument.info.title;  
-var saveFile = File( outputFolder + "/" + activeDocument.name + ".tiff");  
+var saveFile = File( outputFolder + "/" + activeDocument.name + ".tif");  
 SaveTIFF(saveFile);   
 };  
 function SaveTIFF(saveFile){  
