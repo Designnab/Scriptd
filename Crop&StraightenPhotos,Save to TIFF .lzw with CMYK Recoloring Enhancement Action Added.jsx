@@ -80,7 +80,7 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 							cropAndStraighten();
 							
 							// Resize and add white border with rounded outline
-							app.doAction("authors_cards","Set 2.ATN");
+							app.doAction("Rounded Corners","Rounded Corners.ATN");
 
 							// Close the parent document we originally opened
 							docRef.close(SaveOptions.DONOTSAVECHANGES);
