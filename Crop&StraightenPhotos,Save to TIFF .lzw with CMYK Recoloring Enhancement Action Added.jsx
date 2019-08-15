@@ -79,9 +79,6 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 							// which will rusult in more than one open document
 							cropAndStraighten();
 							
-							// Resize and add white border with rounded outline
-							app.doAction("Rounded Corners","Rounded Corners.ATN");
-
 							// Close the parent document we originally opened
 							docRef.close(SaveOptions.DONOTSAVECHANGES);
 					
@@ -93,7 +90,8 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 								// Put all your processing functions...
 								/////////////////////////
 								
-
+									// Resize and add white border with rounded outline
+									app.doAction("Rounded Corners","Rounded Corners.ATN");
 								
 									// Flatten the document in case the file type we want to save to requires a flat doc
 									app.activeDocument.flatten();
