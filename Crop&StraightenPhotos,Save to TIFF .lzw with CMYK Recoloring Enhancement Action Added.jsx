@@ -90,8 +90,8 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 								// Put all your processing functions...
 								/////////////////////////
 								
-									// Resize and add white border with rounded outline
-									app.doAction("Rounded Corners","Rounded Corners.ATN");
+									// Brightness, Saturation & Levels Action
+									app.doAction("Authors Box","Authors Box Action.ATN");
 								
 									// Flatten the document in case the file type we want to save to requires a flat doc
 									app.activeDocument.flatten();
