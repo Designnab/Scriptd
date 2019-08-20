@@ -91,7 +91,7 @@ function OpenFolderRecursively(inputFolder, outputFolder) {
 								/////////////////////////
 								
 									// Brightness, Saturation & Levels Action
-									app.doAction("Authors Box","Authors Box Action.ATN");
+									app.doAction("Authors Box","Authors Box.ATN");
 								
 									// Flatten the document in case the file type we want to save to requires a flat doc
 									app.activeDocument.flatten();
