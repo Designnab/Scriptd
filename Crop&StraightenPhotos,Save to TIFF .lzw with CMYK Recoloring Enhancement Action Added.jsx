@@ -110,7 +110,8 @@ function SaveTIFF(saveFile){
 tiffSaveOptions = new TiffSaveOptions();   
 tiffSaveOptions.embedColorProfile = true;   
 tiffSaveOptions.alphaChannels = true;   
-tiffSaveOptions.layers = true;  
+tiffSaveOptions.layers = true;
+tiffSaveOptions.transparency = true;
 tiffSaveOptions.imageCompression = TIFFEncoding.TIFFLZW;
 activeDocument.saveAs(saveFile, tiffSaveOptions, true, Extension.LOWERCASE);   
 };  
